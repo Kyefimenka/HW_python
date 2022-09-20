@@ -1,7 +1,7 @@
 # Создать программу, считывающую два полинома из двух файлов и записывающая в третий файл их сумму.
 # import  polinom
 
-def get_degree(monomial: str) -> int:
+def get_degree(monomial):
     splited = monomial.split('**')
     if len(splited) == 1:
         if splited[0][-1] == "x":
@@ -11,10 +11,10 @@ def get_degree(monomial: str) -> int:
     else:
         return int(splited[1])
             
-def get_coef(monomial: str) -> int:
-    return int(monomial.split('**')[0].split("*")[0])
+def get_coef(monomial):
+    return int(monomial.split('**')[0][0].split("*")[0])
 
-def get_decomposed_polynom(polynom: list[str]) -> list[int]:
+def get_decomposed_polynom(polynom):
     degrees = list(map(get_degree, polynom))
     list_coef = list(map(get_coef, polynom))
     decomposed_polynom = [0] * 10
@@ -22,7 +22,7 @@ def get_decomposed_polynom(polynom: list[str]) -> list[int]:
         decomposed_polynom[degree] = list_coef[index]
     return decomposed_polynom
 
-def get_polynom_string(decomposed_polynom: list[int]) -> str:
+def get_polynom_string(decomposed_polynom):
     polynom_string = ''
     for index in range(len(decomposed_polynom)-1, -1, -1):
         coef = decomposed_polynom[index]
@@ -33,12 +33,7 @@ def get_polynom_string(decomposed_polynom: list[int]) -> str:
                 polynom_string += f'{coef}'
             else:
                 polynom_string += f'{coef}*x**{index} + '
-
     return polynom_string
-
-# data = polinom.generate_polinom(input())
-# polinom.write_polinom(data, 'polynom1.txt')
-# polinom.write_polinom(data, 'polynom2.txt')
 
 with open('polynom1.txt', 'r') as f:
     data = f.read()

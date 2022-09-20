@@ -1,5 +1,5 @@
 import random
-def generate_polinom(n: int) -> list[int]:
+def generate_polynom(n: int) -> list[int]:
     coef = [random.randrange(0, 10) if i > 0 else random.randrange(1, 10) for i in range(n+1)] 
     polynom = ''
     for i in range(len(coef)):
@@ -11,9 +11,9 @@ def generate_polinom(n: int) -> list[int]:
             polynom += f"{coef[i]}*x + "
     return polynom + " = 0"
 
-def write_polinom(polinom, file_name):
+def write_polynom(polynom, file_name):
     with open(file_name, 'w') as f:
-        f.write(polinom)
+        f.write(polynom)
 
 while True:
         try:
@@ -22,5 +22,5 @@ while True:
         except:
             continue
 
-write_polinom(generate_polinom(n), 'polinom1.txt') 
-write_polinom(generate_polinom(n), 'polinom2.txt') 
+write_polynom(generate_polynom(n), 'polynom1.txt') 
+write_polynom(generate_polynom(n), 'polynom2.txt') 
