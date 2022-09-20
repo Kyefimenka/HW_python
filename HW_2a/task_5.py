@@ -7,3 +7,10 @@ for _ in range(length):
     second_index = randint(0, length-1)
     array[first_index], array[second_index] = array[second_index], array[first_index]
 print(array)
+
+
+
+# from random import shuffle
+# some_list = ['a', 'b', 'c', 'd', 'f']
+# shuffle(some_list)
+# print(some_list)

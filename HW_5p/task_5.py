@@ -1,6 +1,5 @@
-# Даны два файла, в каждом из которых находится запись многочлена. 
-# Задача - сформировать файл, содержащий сумму многочленов.
-
+# Создать программу, считывающую два полинома из двух файлов и записывающая в третий файл их сумму.
+# import  polinom
 
 def get_degree(monomial: str) -> int:
     splited = monomial.split('**')
@@ -36,7 +35,11 @@ def get_polynom_string(decomposed_polynom: list[int]) -> str:
                 polynom_string += f'{coef}*x**{index} + '
 
     return polynom_string
-      
+
+# data = polinom.generate_polinom(input())
+# polinom.write_polinom(data, 'polynom1.txt')
+# polinom.write_polinom(data, 'polynom2.txt')
+
 with open('polynom1.txt', 'r') as f:
     data = f.read()
 
@@ -53,6 +56,3 @@ result = list(map(lambda x,y: x+y, first_decomposed_polynom, second_decomposed_p
 
 with open('result.txt', 'w') as file:
     file.write(get_polynom_string(result))
-
-
-print(get_polynom_string(result))

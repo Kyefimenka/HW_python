@@ -8,3 +8,7 @@ while number > 0:
     binary = str(number % 2) + binary
     number = number // 2
 print(f'Результат = {binary}')
+
+# a=int(input('Введите число: '))
+# b=bin(a)
+# print(b[2:])
