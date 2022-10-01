@@ -1,3 +1,3 @@
-import controller as contr
+import controller
 
-contr.run()
+controller.push_the_batton()   
