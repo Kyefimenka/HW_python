@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+VERSION
+setup.cfg
+setup.py
+anecAPI/__init__.py
+anecAPI/anecAPI.py
+anecAPI/modern_jokes.py
+anecAPI/soviet_jokes.py
+anecapi.egg-info/PKG-INFO
+anecapi.egg-info/SOURCES.txt
+anecapi.egg-info/dependency_links.txt
+anecapi.egg-info/top_level.txt
